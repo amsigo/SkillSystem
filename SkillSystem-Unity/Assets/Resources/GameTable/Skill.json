@@ -1,0 +1,14 @@
+[
+    {
+        "skillNo": 10101,
+        "skillName": "흡혈의 낫",
+        "skillNameKey": "skill_10101_name_key",
+        "skillExplainKey": "skill_10101_explain_key"
+    },
+    {
+        "skillNo": 10102,
+        "skillName": "사신의 낫",
+        "skillNameKey": "skill_10102_name_key",
+        "skillExplainKey": "skill_10102_explain_key"
+    }
+]
