@@ -553,7 +553,7 @@ Transform:
   m_GameObject: {fileID: 523680629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0.4, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170e362a384f77944af952237be36583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
   unitAnimator: {fileID: 2107857306}
   hpbar: {fileID: 1323461154}
   idleClip: {fileID: 0}
@@ -1044,6 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b334c4a508c7b24294482bc3ae0ad03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   unitAnimator: {fileID: 1008118550}
   hpbar: {fileID: 112021442}
   idleClip: {fileID: 0}
@@ -1238,7 +1240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.4}
+  m_AnchoredPosition: {x: 0, y: 0.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814746486
@@ -1340,7 +1342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855117273

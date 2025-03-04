@@ -7,6 +7,8 @@ public class Unit : MonoBehaviour
     protected int maxHp = 100;
     protected int hp = 100;
 
+    public int speed = 10;
+
     private FSMMachine<Unit> unitFsm = new FSMMachine<Unit>();
 
     [SerializeField]
@@ -34,6 +36,8 @@ public class Unit : MonoBehaviour
 
     public int Hp => hp;
 
+    public FSMMachine<Unit> UnitFSM => unitFsm;
+
     public Animator UnitAnimator => unitAnimator;
 
     private void Awake()
@@ -54,14 +58,31 @@ public class Unit : MonoBehaviour
         Debug.Log("FSMStart");
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (unitFsm.CurrentState.Equals(UnitFSMState.Idle) || unitFsm.CurrentState.Equals(UnitFSMState.Move))
+        unitFsm.UpdateFSM();
+    }
+
+    public virtual void FindTarget()
+    {
+
+    }
+
+    public virtual void Move(MoveDir dir)
+    {
+        unitFsm.ChangeState(UnitFSMState.Move);
+
+        switch(dir)
         {
-            if(Input.GetKeyDown(KeyCode.A))
-            {
-                unitFsm.ChangeState(UnitFSMState.Attack);
-            }
+            case MoveDir.Left:
+                unitAnimator.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
+                break;
+
+            case MoveDir.Right:
+                unitAnimator.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.Translate(1 * speed * Time.deltaTime, 0, 0);
+                break;
         }
     }
 
@@ -146,7 +167,14 @@ public class HitState : FSMState<Unit>
 
     public override void OnUpdate()
     {
+        AnimatorStateInfo stateInfo = root.UnitAnimator.GetCurrentAnimatorStateInfo(0);
 
+        Debug.Log(stateInfo.normalizedTime);
+
+        if (stateInfo.IsName("Hit") && stateInfo.normalizedTime < 1.0f)
+        {
+            root.UnitFSM.ChangeState(UnitFSMState.Idle);
+        }
     }
 
     public override void OnExit()
@@ -169,7 +197,12 @@ public class AttackState : FSMState<Unit>
 
     public override void OnUpdate()
     {
+        AnimatorStateInfo stateInfo = root.UnitAnimator.GetCurrentAnimatorStateInfo(0);
 
+        if (stateInfo.IsName("Attack") && stateInfo.normalizedTime >= 1.0f)
+        {
+            root.UnitFSM.ChangeState(UnitFSMState.Idle);
+        }
     }
 
     public override void OnExit()

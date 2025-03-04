@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class SkillEffectAPI
+public static partial class SkillEffectAPI
 {
-    public void CallSkillAPI(SkillEffectData skillEffectData)
+    public static void CallSkillAPI(SkillEffectData skillEffectData, Unit caster, Unit target)
     {
         switch(skillEffectData.effectType)
         {

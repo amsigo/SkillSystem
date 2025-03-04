@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class Hero : Unit
 {
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-
+            Move(MoveDir.Left);
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if(Input.GetKeyUp(KeyCode.LeftArrow))
         {
+            UnitFSM.ChangeState(UnitFSMState.Idle);
+        }
 
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Move(MoveDir.Right);
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            UnitFSM.ChangeState(UnitFSMState.Idle);
+        }
+
+        if (UnitFSM.CurrentState.Equals(UnitFSMState.Idle) || UnitFSM.CurrentState.Equals(UnitFSMState.Move))
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                UnitFSM.ChangeState(UnitFSMState.Attack);
+
+                SkillManager.
+            }
         }
     }
 }

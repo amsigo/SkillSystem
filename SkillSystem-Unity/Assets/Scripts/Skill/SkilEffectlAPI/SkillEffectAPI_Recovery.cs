@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class SkillEffectAPI
+public static partial class SkillEffectAPI
 {
-    public void RecoveryHP()
+    public static void RecoveryHP()
     {
 
     }

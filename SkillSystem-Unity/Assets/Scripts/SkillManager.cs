@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SkillManager : MonoBehaviour
+public class SkillManager : Singleton<SkillManager>
 {
     IEnumerator SkillCoroutine(Unit caster, Unit target, SkillData skillData)
     {
@@ -10,7 +10,7 @@ public class SkillManager : MonoBehaviour
 
         foreach(var skillEffectData in skillEffectDataList)
         {
-            //skillEffectData.
+            SkillEffectAPI.CallSkillAPI(skillEffectData, caster, target);
         }
 
         yield return null;

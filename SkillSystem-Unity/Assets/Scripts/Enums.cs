@@ -28,3 +28,9 @@ public enum UnitFSMState
     Attack,
     Die
 }
+
+public enum MoveDir
+{
+    Left,
+    Right
+}
