@@ -47,4 +47,12 @@ public class SkillTable : BaseTable
 
         return dict;
     }
+
+    public SkillData GetSkillData(int skillNo)
+    {
+        if(skillDataDict.ContainsKey(skillNo))
+            return skillDataDict[skillNo];
+
+        return null;
+    }
 }

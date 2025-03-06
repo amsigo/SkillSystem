@@ -32,7 +32,7 @@ public class Hero : Unit
             {
                 UnitFSM.ChangeState(UnitFSMState.Attack);
 
-                SkillManager.
+                //SkillManager.
             }
         }
     }

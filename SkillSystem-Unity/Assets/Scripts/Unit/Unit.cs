@@ -17,23 +17,6 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private UnitHpBar hpbar;
 
-    [Header("AniClip")]
-
-    [SerializeField]
-    private AnimationClip idleClip;
-
-    [SerializeField]
-    private AnimationClip moveClip;
-
-    [SerializeField]
-    private AnimationClip hitClip;
-
-    [SerializeField]
-    private AnimationClip attackClip;
-
-    [SerializeField]
-    private AnimationClip dieClip;
-
     public int Hp => hp;
 
     public FSMMachine<Unit> UnitFSM => unitFsm;

@@ -4,6 +4,16 @@ using System.Collections.Generic;
 
 public class SkillManager : Singleton<SkillManager>
 {
+    private Queue<IEnumerator> coroutineQueue = new Queue<IEnumerator>();
+
+    IEnumerator ProcessQueue()
+    {
+        while (coroutineQueue.Count > 0)
+        {
+            yield return StartCoroutine(coroutineQueue.Dequeue());
+        }
+    }
+
     IEnumerator SkillCoroutine(Unit caster, Unit target, SkillData skillData)
     {
         List<SkillEffectData> skillEffectDataList = GameTableManager.Instance.SkillEffectTable.GetSkillEffectDataList(skillData.skillNo);
@@ -14,5 +24,17 @@ public class SkillManager : Singleton<SkillManager>
         }
 
         yield return null;
+    }
+
+    public void CastSkill(Unit caster, int skillNo)
+    {
+        SkillData skillData = GameTableManager.Instance.SkillTable.GetSkillData(skillNo);
+
+        if (skillData != null)
+        {
+            //skillData.
+
+            coroutineQueue.Enqueue(SkillCoroutine(caster, caster, skillData));
+        }
     }
 }
