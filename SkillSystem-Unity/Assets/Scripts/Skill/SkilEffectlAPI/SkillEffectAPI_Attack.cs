@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static partial class SkillEffectAPI
 {
-    public static void Damage()
+    public static void Damage(Unit caster, Unit target, int damage)
     {
-
+        target.Damage(damage);
     }
 }

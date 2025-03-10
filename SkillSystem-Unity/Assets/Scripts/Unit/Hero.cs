@@ -31,8 +31,17 @@ public class Hero : Unit
             if (Input.GetKeyDown(KeyCode.A))
             {
                 UnitFSM.ChangeState(UnitFSMState.Attack);
-
-                //SkillManager.
+                SkillManager.Instance.CastSkill(this, 10101);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                UnitFSM.ChangeState(UnitFSMState.Attack);
+                SkillManager.Instance.CastSkill(this, 10102);
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                UnitFSM.ChangeState(UnitFSMState.Attack);
+                SkillManager.Instance.CastSkill(this, 10103);
             }
         }
     }

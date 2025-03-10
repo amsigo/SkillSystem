@@ -32,9 +32,19 @@ public class SkillManager : Singleton<SkillManager>
 
         if (skillData != null)
         {
-            //skillData.
+            switch(skillData.target)
+            {
+                case SkillEffectTarget.Caster:
+                    coroutineQueue.Enqueue(SkillCoroutine(caster, caster, skillData));
+                    break;
 
-            coroutineQueue.Enqueue(SkillCoroutine(caster, caster, skillData));
+                case SkillEffectTarget.Enemy:
+                    Unit target = null;// = caster.FindTarget();
+
+                    if(target)
+                        coroutineQueue.Enqueue(SkillCoroutine(caster, caster, skillData));
+                    break;
+            }
         }
     }
 }

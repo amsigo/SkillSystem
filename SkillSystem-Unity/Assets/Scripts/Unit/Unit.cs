@@ -46,9 +46,17 @@ public class Unit : MonoBehaviour
         unitFsm.UpdateFSM();
     }
 
-    public virtual void FindTarget()
+    public virtual Unit FindTarget(float attackRange)
     {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, attackRange);
 
+        if(hit.collider != null)
+        {
+            Unit targetUnit = hit.collider.GetComponent<Unit>();
+            return targetUnit;
+        }
+
+        return null;
     }
 
     public virtual void Move(MoveDir dir)
@@ -71,6 +79,8 @@ public class Unit : MonoBehaviour
 
     public virtual void Damage(int damage)
     {
+        unitFsm.ChangeState(UnitFSMState.Hit);
+
         hp -= damage;
 
         if(hp < 0)

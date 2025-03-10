@@ -9,11 +9,11 @@ public static partial class SkillEffectAPI
         switch(skillEffectData.effectType)
         {
             case SkillEffectType.Damage:
-                Damage();
+                Damage(caster, target, skillEffectData.value);
                 break;
 
             case SkillEffectType.RecoveryHP:
-                RecoveryHP();
+                RecoveryHP(caster, target, skillEffectData.value);
                 break;
         }
     }
