@@ -1,0 +1,16 @@
+[
+    {
+        "unitNo": 100001,
+        "devName": "영웅",
+        "unitType": "Hero",
+        "maxHp": 100,
+        "unitNameKey": "unit_name_100001"
+    },
+    {
+        "unitNo": 200001,
+        "devName": "적",
+        "unitType": "Enemy",
+        "maxHp": 100,
+        "unitNameKey": "unit_name_200001"
+    }
+]

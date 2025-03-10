@@ -10,6 +10,7 @@ public class SkillEffectData
     public int value;
 }
 
+[System.Serializable]
 public class SkillEffectTableRow
 {
     public int skillNo;

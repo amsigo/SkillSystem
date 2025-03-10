@@ -1,18 +1,26 @@
 [
     {
         "key": "skill_10101_name_key",
-        "localizingKey": "흡혈의 검"
+        "localizingKey": "일반 공격"
     },
     {
         "key": "skill_10102_name_key",
+        "localizingKey": "흡혈의 검"
+    },
+    {
+        "key": "skill_10103_name_key",
         "localizingKey": "사신의 검"
     },
     {
         "key": "skill_10101_explain_key",
-        "localizingKey": "적에게 데미지10을 입히고 입힌 데미지 만큼 시전자의 체력을 회복합니다."
+        "localizingKey": "일반 공격"
     },
     {
         "key": "skill_10102_explain_key",
+        "localizingKey": "적에게 데미지10을 입히고 입힌 데미지 만큼 시전자의 체력을 회복합니다."
+    },
+    {
+        "key": "skill_10103_explain_key",
         "localizingKey": "적에게 데미지10을 입히고 입힌 데미지 절반 만큼 시전자의 체력이 감소합니다."
     }
 ]

@@ -1,14 +1,30 @@
 [
     {
         "skillNo": 10101,
-        "skillName": "흡혈의 낫",
+        "skillName": "일반 공격",
+        "attackRange": 1,
         "skillNameKey": "skill_10101_name_key",
         "skillExplainKey": "skill_10101_explain_key"
     },
     {
         "skillNo": 10102,
-        "skillName": "사신의 낫",
+        "skillName": "흡혈의 낫",
+        "attackRange": 1,
         "skillNameKey": "skill_10102_name_key",
         "skillExplainKey": "skill_10102_explain_key"
+    },
+    {
+        "skillNo": 10103,
+        "skillName": "사신의 낫",
+        "attackRange": 1,
+        "skillNameKey": "skill_10103_name_key",
+        "skillExplainKey": "skill_10103_explain_key"
+    },
+    {
+        "skillNo": 10104,
+        "skillName": "피의대가",
+        "attackRange": 3,
+        "skillNameKey": "skill_10104_name_key",
+        "skillExplainKey": "skill_10104_explain_key"
     }
 ]

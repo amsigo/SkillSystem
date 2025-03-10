@@ -6,6 +6,9 @@ using UnityEngine;
 public class SkillData
 {
     public int skillNo;
+    public SkillEffectType effectType;
+    public SkillEffectTarget target;
+    public int value;
 }
 
 [System.Serializable]
@@ -40,6 +43,9 @@ public class SkillTable : BaseTable
 
             SkillData skillData = new SkillData();
             skillData.skillNo = row.skillNo;
+            skillData.effectType = EnumUtil<SkillEffectType>.Parse(row.effectType);
+            skillData.target = EnumUtil<SkillEffectTarget>.Parse(row.target);
+            skillData.value = row.value;
 
             if (!dict.ContainsKey(key))
                 dict.Add(key, skillData);

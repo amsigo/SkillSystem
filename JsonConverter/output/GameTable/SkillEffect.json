@@ -1,30 +1,37 @@
 [
     {
         "skillNo": 10101,
-        "EffectType": "Damage",
-        "Target": "Enemy",
-        "Value": 10,
-        "ValueType": "value"
-    },
-    {
-        "skillNo": 10101,
-        "EffectType": "RecoveryHp",
-        "Target": "Caster",
-        "Value": 10,
-        "ValueType": "value"
+        "effectType": "Damage",
+        "target": "Enemy",
+        "value": 1,
+        "valueType": "value"
     },
     {
         "skillNo": 10102,
-        "EffectType": "Damage",
-        "Target": "Enemy",
-        "Value": 10,
-        "ValueType": "value"
+        "effectType": "Damage",
+        "target": "Enemy",
+        "value": 10,
+        "valueType": "value"
     },
     {
         "skillNo": 10102,
-        "EffectType": "Damage",
-        "Target": "Caster",
-        "Value": 5,
-        "ValueType": "value"
+        "effectType": "RecoveryHp",
+        "target": "Caster",
+        "value": 10,
+        "valueType": "value"
+    },
+    {
+        "skillNo": 10103,
+        "effectType": "Damage",
+        "target": "Enemy",
+        "value": 10,
+        "valueType": "value"
+    },
+    {
+        "skillNo": 10103,
+        "effectType": "Damage",
+        "target": "Caster",
+        "value": 5,
+        "valueType": "value"
     }
 ]
