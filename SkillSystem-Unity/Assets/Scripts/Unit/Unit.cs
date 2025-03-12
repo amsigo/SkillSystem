@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    protected int maxHp = 100;
-    protected int hp = 100;
-
+    public int maxHp = 100;
+    public int hp = 100;
     public int speed = 10;
+
+    public MoveDir currentDir;
 
     private FSMMachine<Unit> unitFsm = new FSMMachine<Unit>();
 
@@ -36,6 +37,8 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
+        hpbar.UpdateHpBar(hp, maxHp);
+
         unitFsm.FSMStart(UnitFSMState.Idle);
 
         Debug.Log("FSMStart");
@@ -48,11 +51,19 @@ public class Unit : MonoBehaviour
 
     public virtual Unit FindTarget(float attackRange)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, attackRange);
+        int unitLayer = 1 << gameObject.layer;
 
-        if(hit.collider != null)
+        RaycastHit2D hit;
+
+        if(currentDir == MoveDir.Left)
+            hit = Physics2D.Raycast(transform.position, Vector2.left, attackRange, ~unitLayer);
+
+        else
+            hit = Physics2D.Raycast(transform.position, Vector2.right, attackRange, ~unitLayer);
+
+        if (hit.collider != null)
         {
-            Unit targetUnit = hit.collider.GetComponent<Unit>();
+            Unit targetUnit = hit.collider.GetComponentInParent<Unit>();
             return targetUnit;
         }
 
@@ -61,6 +72,7 @@ public class Unit : MonoBehaviour
 
     public virtual void Move(MoveDir dir)
     {
+        currentDir = dir;
         unitFsm.ChangeState(UnitFSMState.Move);
 
         switch(dir)
@@ -77,9 +89,10 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public virtual void Damage(int damage)
+    public virtual void Damage(int damage, bool bHitAni = true)
     {
-        unitFsm.ChangeState(UnitFSMState.Hit);
+        if(bHitAni)
+            unitFsm.ChangeState(UnitFSMState.Hit);
 
         hp -= damage;
 
@@ -162,9 +175,7 @@ public class HitState : FSMState<Unit>
     {
         AnimatorStateInfo stateInfo = root.UnitAnimator.GetCurrentAnimatorStateInfo(0);
 
-        Debug.Log(stateInfo.normalizedTime);
-
-        if (stateInfo.IsName("Hit") && stateInfo.normalizedTime < 1.0f)
+        if (stateInfo.IsName("Hit") && stateInfo.normalizedTime >= 1.0f)
         {
             root.UnitFSM.ChangeState(UnitFSMState.Idle);
         }

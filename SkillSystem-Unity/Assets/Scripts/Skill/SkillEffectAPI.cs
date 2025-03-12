@@ -6,14 +6,27 @@ public static partial class SkillEffectAPI
 {
     public static void CallSkillAPI(SkillEffectData skillEffectData, Unit caster, Unit target)
     {
-        switch(skillEffectData.effectType)
+        Unit skillTarget = null;
+
+        switch (skillEffectData.target)
+        {
+            case SkillEffectTarget.Caster:
+                skillTarget = caster;
+                break;
+
+            case SkillEffectTarget.Enemy:
+                skillTarget = target;
+                break;
+        }
+
+        switch (skillEffectData.effectType)
         {
             case SkillEffectType.Damage:
-                Damage(caster, target, skillEffectData.value);
+                Damage(caster, skillTarget, skillEffectData.value);
                 break;
 
             case SkillEffectType.RecoveryHP:
-                RecoveryHP(caster, target, skillEffectData.value);
+                RecoveryHP(caster, skillTarget, skillEffectData.value);
                 break;
         }
     }

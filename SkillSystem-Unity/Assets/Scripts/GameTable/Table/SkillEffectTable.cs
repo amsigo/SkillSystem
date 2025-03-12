@@ -17,7 +17,6 @@ public class SkillEffectTableRow
     public string effectType;
     public string target;
     public int value;
-    public string valueType;
 }
 
 public class SkillEffectTable : BaseTable
@@ -45,6 +44,7 @@ public class SkillEffectTable : BaseTable
             skillEffectData.skillNo = row.skillNo;
             skillEffectData.effectType = EnumUtil<SkillEffectType>.Parse(row.effectType);
             skillEffectData.target = EnumUtil<SkillEffectTarget>.Parse(row.target);
+            skillEffectData.value = row.value;
 
 
             if (!dict.ContainsKey(key))

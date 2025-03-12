@@ -6,11 +6,19 @@ public class SkillManager : Singleton<SkillManager>
 {
     private Queue<IEnumerator> coroutineQueue = new Queue<IEnumerator>();
 
+    private void Awake()
+    {
+        StartCoroutine(ProcessQueue());
+    }
+
     IEnumerator ProcessQueue()
     {
-        while (coroutineQueue.Count > 0)
+        while (true)
         {
-            yield return StartCoroutine(coroutineQueue.Dequeue());
+            if(coroutineQueue.Count > 0)
+                yield return StartCoroutine(coroutineQueue.Dequeue());
+
+            yield return null;
         }
     }
 

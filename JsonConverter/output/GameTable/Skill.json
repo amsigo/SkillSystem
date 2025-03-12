@@ -19,16 +19,8 @@
         "skillNo": 10103,
         "skillName": "사신의 낫",
         "target": "Enemy",
-        "attackRange": 1,
+        "attackRange": 3,
         "skillNameKey": "skill_10103_name_key",
         "skillExplainKey": "skill_10103_explain_key"
-    },
-    {
-        "skillNo": 10104,
-        "skillName": "피의대가",
-        "target": "Enemy",
-        "attackRange": 3,
-        "skillNameKey": "skill_10104_name_key",
-        "skillExplainKey": "skill_10104_explain_key"
     }
 ]

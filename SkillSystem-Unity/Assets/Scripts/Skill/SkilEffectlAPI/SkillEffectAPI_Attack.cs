@@ -6,6 +6,9 @@ public static partial class SkillEffectAPI
 {
     public static void Damage(Unit caster, Unit target, int damage)
     {
-        target.Damage(damage);
+        if(caster == target)
+            target.Damage(damage, false);
+        else
+            target.Damage(damage);
     }
 }

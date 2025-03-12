@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3734505}
   - component: {fileID: 3734504}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 44912260}
   - component: {fileID: 44912261}
   - component: {fileID: 44912262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,11 +240,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 1e0edeb2852d365418855658974c17aa, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 69387538}
   - component: {fileID: 69387539}
   - component: {fileID: 69387540}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,11 +315,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 1e0edeb2852d365418855658974c17aa, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 199889857}
   - component: {fileID: 199889859}
   - component: {fileID: 199889858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 309880156}
   - component: {fileID: 309880158}
   - component: {fileID: 309880157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,8 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523680630}
   - component: {fileID: 523680631}
-  - component: {fileID: 523680632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,23 +590,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  currentDir: 1
   unitAnimator: {fileID: 2107857306}
   hpbar: {fileID: 1323461154}
---- !u!114 &523680632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523680629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353e440ed51640346b658d1977758808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rayOrigin: {fileID: 523680630}
-  rayDirection: {x: 1, y: 0}
-  rayDistance: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +698,7 @@ GameObject:
   - component: {fileID: 803710656}
   - component: {fileID: 803710655}
   - component: {fileID: 803710654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hp_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +925,7 @@ GameObject:
   - component: {fileID: 1180489696}
   - component: {fileID: 1180489698}
   - component: {fileID: 1180489697}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ani
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323461155}
   - component: {fileID: 1323461154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1504308404}
   - component: {fileID: 1504308403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  currentDir: 0
   unitAnimator: {fileID: 1180489696}
   hpbar: {fileID: 3734504}
 --- !u!4 &1504308404
@@ -1251,7 +1237,7 @@ GameObject:
   - component: {fileID: 1586697765}
   - component: {fileID: 1586697764}
   - component: {fileID: 1586697763}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1352,7 +1338,7 @@ GameObject:
   - component: {fileID: 1722051900}
   - component: {fileID: 1722051899}
   - component: {fileID: 1722051898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hp_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1487,7 +1473,7 @@ GameObject:
   - component: {fileID: 1855117275}
   - component: {fileID: 1855117274}
   - component: {fileID: 1855117273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1575,7 @@ GameObject:
   - component: {fileID: 2107857306}
   - component: {fileID: 2107857305}
   - component: {fileID: 2107857307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ani
   m_TagString: Untagged
   m_Icon: {fileID: 0}
