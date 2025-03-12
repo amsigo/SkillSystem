@@ -10,6 +10,8 @@ attackRange : 스킬의 발동을 위한 대상과의 거리
 
 ![Image](https://github.com/user-attachments/assets/bda8e240-53b5-4dd5-9b89-dc59aaa6a6d4)   
 
+<br/><br/>
+
 ## 스킬 효과 테이블 설명
 스킬 효과 테이블은 스킬이 발동되었을때 발생하는 효과를 정의 하는 테이블입니다.   
 같은 skillNo로 작성하면 작성되어있는 순서대로 효과가 순차적으로 발생합니다.
@@ -21,9 +23,12 @@ value : 스킬 효과를 발동시킬때 사용하는 값
 
 ![Image](https://github.com/user-attachments/assets/387eb6cc-a716-4578-a52f-d0c5c5d432ff)
 
+<br/><br/>
    
 ## 스킬 동작 플로우
 ![Image](https://github.com/user-attachments/assets/472a2d74-e673-4ca4-85c6-fe2888985a62)
+
+<br/><br/>
 
 ## 스킬 API 구현
 SkillAPI를 partial class로 만들어 스킬 효과의 종류에 따라 나누어 관리 하기 편하도록 구현하였습니다.
@@ -84,6 +89,7 @@ public static partial class SkillEffectAPI
 }
 ```
 
+<br/><br/>
 
 ## 스킬 - 일반 공격 - 커맨드 A 
 거리 1의 범위에 있는 적에게 데미지 1을 입힙니다.
@@ -94,7 +100,7 @@ public static partial class SkillEffectAPI
 
 ![Image](https://github.com/user-attachments/assets/2a89e09f-dd0b-4318-8b4a-b3a889f8a0fc)
 
-
+<br/><br/>
 
 ## 스킬 - 흡혈의 낫 - 커맨드 S
 거리 1의 범위에 있는 적에게 데미지 10을 입히고 스킬 시전자가 체력을 10 회복한다.
@@ -105,6 +111,7 @@ public static partial class SkillEffectAPI
 
 ![Image](https://github.com/user-attachments/assets/e0f6e07f-90da-4bd8-a161-e859ca047613)
 
+<br/><br/>
 
 ## 스킬 - 사신의 낫 - 커맨드 D
 거리 3의 버위에 있는 적에게 데미지 10을 입히고 스킬 시전자가 5의 피해를 입습니다.
