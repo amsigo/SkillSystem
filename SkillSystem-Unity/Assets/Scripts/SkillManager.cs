@@ -39,10 +39,10 @@ public class SkillManager : Singleton<SkillManager>
                     break;
 
                 case SkillEffectTarget.Enemy:
-                    Unit target = null;// = caster.FindTarget();
+                    Unit target = caster.FindTarget(skillData.attackRange);
 
                     if(target)
-                        coroutineQueue.Enqueue(SkillCoroutine(caster, caster, skillData));
+                        coroutineQueue.Enqueue(SkillCoroutine(caster, target, skillData));
                     break;
             }
         }

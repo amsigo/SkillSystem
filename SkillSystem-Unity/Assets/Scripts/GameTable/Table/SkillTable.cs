@@ -6,18 +6,22 @@ using UnityEngine;
 public class SkillData
 {
     public int skillNo;
-    public SkillEffectType effectType;
+    public string skillName;
     public SkillEffectTarget target;
-    public int value;
+    public int attackRange;
+    public string skillNameKey;
+    public string skillExplainKey;
 }
 
 [System.Serializable]
 public class SkillTableRow
 {
     public int skillNo;
-    public string effectType;
+    public string skillName;
     public string target;
-    public int value;
+    public int attackRange;
+    public string skillNameKey;
+    public string skillExplainKey;
 }
 
 public class SkillTable : BaseTable
@@ -43,9 +47,11 @@ public class SkillTable : BaseTable
 
             SkillData skillData = new SkillData();
             skillData.skillNo = row.skillNo;
-            skillData.effectType = EnumUtil<SkillEffectType>.Parse(row.effectType);
+            skillData.skillName = row.skillName;
             skillData.target = EnumUtil<SkillEffectTarget>.Parse(row.target);
-            skillData.value = row.value;
+            skillData.attackRange = row.attackRange;
+            skillData.skillNameKey = row.skillNameKey;
+            skillData.skillExplainKey = row.skillExplainKey;
 
             if (!dict.ContainsKey(key))
                 dict.Add(key, skillData);
